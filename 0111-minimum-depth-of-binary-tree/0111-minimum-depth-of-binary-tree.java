@@ -16,26 +16,22 @@
 class Solution {
     public int size(TreeNode root){
         if(root==null) return 0;
-      
-        
+
         int leftSize=size(root.left);
         int rightSize=size(root.right);
-         // If left child is absent
 
-          if (root.left == null) {
-            return 1 + rightSize;
+        if(root.right==null){
+            return 1+leftSize;
         }
 
-        // If right child is absent
-        if (root.right == null) {
-            return 1 + leftSize;
+        if(root.left==null){
+            return 1+rightSize;
         }
 
-        int minSize=Math.min(leftSize,rightSize);
-        return 1+minSize;
+        return 1+Math.min(leftSize,rightSize);
     }
     public int minDepth(TreeNode root) {
-            int ans=size(root);
-            return ans;        
+        int ans=size(root);
+        return ans;
     }
 }
