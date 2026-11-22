@@ -27,8 +27,8 @@ class Solution {
         int leftHeight=height(root.left);
         int rightHeight=height(root.right);
        
+        if(Math.abs(leftHeight-rightHeight)>1) return false;
 
-       return isBalanced(root.left) && isBalanced(root.right) && Math.abs(leftHeight-rightHeight)<=1;
-
+       return isBalanced(root.left) && isBalanced(root.right);
     }
 }
